@@ -1,0 +1,38 @@
+﻿html {
+  background: black;
+  color: white;
+  font-size: 70px;
+  font-family: Helvetica;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.logo .logoc {
+  background: #F49931;
+  color: black;
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.sub {
+  font-size: 28px;
+  position: absolute;
+  letter-spacing: 2px;
+  margin-top: 3px;
+  margin-left: 12%;
+}
+
+.coi {
+  color: #F49931;
+}
+
+.porcoi {
+  color: #F49931;
+}

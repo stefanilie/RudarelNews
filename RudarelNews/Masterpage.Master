@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Masterpage.Master.cs" Inherits="RudarelNews.Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>RudarelNews</title>
+    <link rel="stylesheet" type="text/css" href="Style.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="banner">
+
+        </div>
+
+        <ul id="navigation">
+
+        </ul>
+
+        <div id="content_area">
+
+        </div>
+    </form>
+</body>
+</html>

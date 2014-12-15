@@ -1,0 +1,6 @@
+C:\Users\Ilie\Documents\GitHub\RudarelNews\RudarelNews\bin\RudarelNews.dll.config
+C:\Users\Ilie\Documents\GitHub\RudarelNews\RudarelNews\bin\RudarelNews.dll
+C:\Users\Ilie\Documents\GitHub\RudarelNews\RudarelNews\bin\RudarelNews.pdb
+C:\Users\Ilie\Documents\GitHub\RudarelNews\RudarelNews\obj\Debug\RudarelNews.csprojResolveAssemblyReference.cache
+C:\Users\Ilie\Documents\GitHub\RudarelNews\RudarelNews\obj\Debug\RudarelNews.dll
+C:\Users\Ilie\Documents\GitHub\RudarelNews\RudarelNews\obj\Debug\RudarelNews.pdb
