@@ -9,8 +9,8 @@
 
 #logo{
     position: absolute;
-    top: 17%;
-    left: 50%;
+    top: 20%;
+    left: 55%;
     -webkit-transform: translate3d(-50%, -50%, 0);
     transform: translate3d(-50%, -50%, 0);
 }
@@ -40,9 +40,9 @@
 }
 
 #wrapper {
-    width: 1080px;
+    width: 100%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 1%;
     border: 5px solid #dedede;
 }
 
@@ -50,6 +50,36 @@
     height: 60px;
     border: 3px solid #E3E3E3;
     margin-top: 2%;
+    padding-left: 20%;
+    letter-spacing: 2px;
+    background-color: black;
+    text-align: center;
+}
+
+#nav {
+    list-style: none;
+}
+
+#nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    display: none;
+}
+
+#nav li ul li {
+    color: white;
+    border: 3px solid #E3E3E3;
+    padding-left: 10px;
+}
+
+#nav li{
+    font-size: 20px;
+    float: left;
+    position: relative;
+    width: 20%;
+    height: 50px;
 }
 
 #content_area {
@@ -71,6 +101,9 @@
 #footer {
     clear: both;
     width: auto;
-    height: 40px;
-    margin-top: 20px;
+    height: 1%;
+    margin-top: 1%;
+    color: black;
+    text-align: center;
+    border: 3px solid #E3E3E3;
 }
