@@ -4,6 +4,7 @@
     color: white;
     font-size: 70px;
     font-family: Helvetica;
+    border: 3px solid #E3E3E3;
 }
 
 #logo{
@@ -40,20 +41,35 @@
 
 #wrapper {
     width: 1080px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 5px solid #dedede;
 }
 
 #navigation {
-
+    height: 60px;
+    border: 3px solid #E3E3E3;
 }
 
 #content_area {
     float: left;
+    width: 67%;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+    border: 3px solid #E3E3E3;
 }
 
 #sidebar {
     float: right;
+    width: 27%;
+    height: 400px;
+    margin: 20px 10px 20px 10px;
+    border: 3px solid #E3E3E3;
 }
 
 #footer {
     clear: both;
+    width: auto;
+    height: 40px;
+    margin-top: 20px;
 }
