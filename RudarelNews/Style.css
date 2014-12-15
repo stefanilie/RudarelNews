@@ -1,19 +1,20 @@
-﻿html {
-  background: black;
-  color: white;
-  font-size: 70px;
-  font-family: Helvetica;
+﻿.banner {
+    height:200px;
+    background: black;
+    color: white;
+    font-size: 70px;
+    font-family: Helvetica;
 }
 
-.logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
+#logo{
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
 }
 
-.logo .logoc {
+#logo #logoc {
   background: #F49931;
   color: black;
   border-radius: 10px;
@@ -21,7 +22,7 @@
   margin-left: 5px;
 }
 
-.sub {
+#sub {
   font-size: 28px;
   position: absolute;
   letter-spacing: 2px;
@@ -29,10 +30,30 @@
   margin-left: 12%;
 }
 
-.coi {
+#coi {
   color: #F49931;
 }
 
-.porcoi {
+#porcoi {
   color: #F49931;
+}
+
+#wrapper {
+    width: 1080px;
+}
+
+#navigation {
+
+}
+
+#content_area {
+    float: left;
+}
+
+#sidebar {
+    float: right;
+}
+
+#footer {
+    clear: both;
 }
