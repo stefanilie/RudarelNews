@@ -49,12 +49,13 @@
 #navigation {
     height: 60px;
     border: 3px solid #E3E3E3;
+    margin-top: 2%;
 }
 
 #content_area {
     float: left;
     width: 67%;
-    margin: 20px 0 20px 0;
+    margin: 2% 0 2% 0;
     padding: 10px;
     border: 3px solid #E3E3E3;
 }
