@@ -61,6 +61,7 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="Errorpage.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Manager.aspx" />
     <Content Include="Masterpage.Master" />
@@ -78,6 +79,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Errorpage.aspx.cs">
+      <DependentUpon>Errorpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errorpage.aspx.designer.cs">
+      <DependentUpon>Errorpage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
