@@ -77,11 +77,13 @@
             <td style="width: 136px">
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" Width="157px" />
             </td>
-            <td style="width: 236px">&nbsp;</td>
+            <td style="width: 236px">
+                <asp:Button ID="Button2" runat="server" CausesValidation="False" OnClick="Button2_Click" Text="Erase DB" UseSubmitBehavior="False" />
+            </td>
         </tr>
         <tr>
             <td style="width: 195px; text-align: right; height: 23px;"></td>
-            <td style="width: 136px; height: 23px;"></td>
+            <td style="width: 136px; height: 23px;">&nbsp;</td>
             <td style="width: 236px; height: 23px;"></td>
         </tr>
         <tr>
