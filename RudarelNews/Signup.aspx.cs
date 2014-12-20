@@ -60,7 +60,8 @@ namespace RudarelNews
             }
             catch(Exception ex)
             {
-                Response.Write("Error: "+ ex.ToString());
+                Response.Redirect("Errorpage.aspx");
+                Response.Write("Error: "+ ex.Message);
             }
         }
     }
