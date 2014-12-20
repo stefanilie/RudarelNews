@@ -42,7 +42,7 @@
         <tr>
             <td style="width: 195px; text-align: right; height: 26px">Password:</td>
             <td style="width: 136px; height: 26px">
-                <asp:TextBox ID="tbPass" runat="server" Width="150px"></asp:TextBox>
+                <asp:TextBox ID="tbPass" runat="server" Width="150px" TextMode="Password"></asp:TextBox>
             </td>
             <td style="height: 26px; width: 236px">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="tbPass" ErrorMessage="Password required." Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -51,7 +51,7 @@
         <tr>
             <td style="width: 195px; text-align: right">Confirm password:</td>
             <td style="width: 136px">
-                <asp:TextBox ID="tbCPass" runat="server" Width="150px"></asp:TextBox>
+                <asp:TextBox ID="tbCPass" runat="server" Width="150px" TextMode="Password"></asp:TextBox>
             </td>
             <td style="width: 236px">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbCPass" ErrorMessage="Confirm password required." Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
