@@ -44,7 +44,8 @@ namespace RudarelNews
                 string strPass = tbPass.Text;
                 string strEmail = tbEmail.Text;
                 string strUserType = ddUserType.SelectedItem.Text;
-                string strInsertQuery = "insert into Users (first_name, last_name, username, password, email, user_type) values ('"+
+                string strInsertQuery = "insert into Users (id, first_name, last_name, username, password, email, user_type) values ('"+
+                    DateTime.Now.ToString().Trim(new Char[] { ' ', ':', '.' })+"','"+
                     strFirstName+"','"+
                     strLastName+"','"+
                     strUsername+"','"+
