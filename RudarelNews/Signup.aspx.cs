@@ -57,14 +57,14 @@ namespace RudarelNews
                 objSqlCommand.CommandType = System.Data.CommandType.Text;
                 objSqlCommand.CommandText = strInsertQuery;
                 objSqlCommand.Connection = objConnection;
-                /*
+                
                 objSqlCommand.Parameters.AddWithValue("first_name", tbFirstName.Text);
                 objSqlCommand.Parameters.AddWithValue("last_name", tbLastName.Text);
                 objSqlCommand.Parameters.AddWithValue("username", tbUsername.Text);
                 objSqlCommand.Parameters.AddWithValue("password", tbPass.Text);
                 objSqlCommand.Parameters.AddWithValue("email", tbEmail.Text);
                 objSqlCommand.Parameters.AddWithValue("user_type", ddUserType.SelectedItem.ToString());
-                */
+                
                 objConnection.Open();
                 objSqlCommand.ExecuteNonQuery();
 
