@@ -62,7 +62,7 @@
         <tr>
             <td style="width: 195px; text-align: right">User type</td>
             <td style="width: 136px">
-                <asp:DropDownList ID="DropDownList1" runat="server" Height="26px" Width="154px">
+                <asp:DropDownList ID="ddUserType" runat="server" Height="26px" Width="154px">
                     <asp:ListItem>(none)</asp:ListItem>
                     <asp:ListItem>User</asp:ListItem>
                     <asp:ListItem>Editor</asp:ListItem>
@@ -75,7 +75,7 @@
         <tr>
             <td style="width: 195px; text-align: right">&nbsp;</td>
             <td style="width: 136px">
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" Width="157px" />
             </td>
             <td style="width: 236px">&nbsp;</td>
         </tr>
