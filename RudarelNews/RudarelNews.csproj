@@ -63,6 +63,7 @@
     </Content>
     <Content Include="Errorpage.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Manager.aspx" />
     <Content Include="Masterpage.Master" />
     <None Include="Web.Debug.config">
@@ -95,6 +96,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager.aspx.cs">
       <DependentUpon>Manager.aspx</DependentUpon>
