@@ -18,7 +18,7 @@
         <tr>
             <td style="width: 166px; text-align: right">Password:</td>
             <td style="width: 163px">
-                <asp:TextBox ID="tbLogPass" runat="server" Width="150px"></asp:TextBox>
+                <asp:TextBox ID="tbLogPass" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbLogPass" ErrorMessage="Password required." Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>

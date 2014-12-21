@@ -30,7 +30,7 @@ namespace RudarelNews
                 string strCheckPass = "select password from Users where username='" + tbLogUsr.Text + "'";
                 SqlCommand objSqlCommandPass = new SqlCommand(strCheckPass, objConnection);
                 string strPassword = objSqlCommandPass.ExecuteScalar().ToString();
-                if(strPassword==tbLogPass.Text)
+                if(strPassword.Trim()==tbLogPass.Text.Trim())
                 {
                     Session["New"] = tbLogUsr.Text;
                     Response.Write("Password is correct");
