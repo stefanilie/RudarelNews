@@ -23,6 +23,7 @@ namespace RudarelNews
             string strCheckUser = "select count(*) from Users where username='" + tbLogUsr.Text + "'";
             SqlCommand objSqlCommand = new SqlCommand(strCheckUser, objConnection);
             int nReturned = Convert.ToInt32(objSqlCommand.ExecuteScalar().ToString());
+            objConnection.Close();
             if (nReturned == 1)
             {
                 objConnection.Open();
@@ -31,6 +32,7 @@ namespace RudarelNews
                 string strPassword = objSqlCommandPass.ExecuteScalar().ToString();
                 if(strPassword==tbLogPass.Text)
                 {
+                    Session["New"] = tbLogUsr.Text;
                     Response.Write("Password is correct");
                 }
                 else
@@ -38,6 +40,11 @@ namespace RudarelNews
                     Response.Write("Password incorrect");
                 }
             }
+            else
+            {
+                Response.Write("Username incorrect");
+            }
+
             objConnection.Close();
         }
     }
