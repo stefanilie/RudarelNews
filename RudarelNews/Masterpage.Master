@@ -21,7 +21,12 @@
             <div id="navigation">
                 <ul id="nav">
                     <li><a href="Home.aspx">Home</a></li>
+                    <% bool val1 = (Page.Session["New"]!=null);
+                       if(!val1){ %>
                     <li><a href="Signup.aspx">Sign Up</a></li>
+                    <%} else {%>
+                    <li><a runat="server" href='Login.aspx' onclick="anchor_click">Log out</a></li>
+                    <% } %>
                     <li><a href="#">Sport</a></li>
                     <li><a href="#">Tech</a></li>
                     <li><a href="Login.aspx">Login</a></li>
