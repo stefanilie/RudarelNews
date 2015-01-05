@@ -57,5 +57,30 @@ namespace RudarelNews
                 labelResults.Text = "Upload failed!";
             }
         }
+
+        protected void btnPublishArticle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Guid guid = Guid.NewGuid();
+                string id = guid.ToString();
+                string title = tbArticleTitle.Text;
+                string author = User.Identity.Name.ToString();
+                string text = tbArticleText.Text;
+                string category = ddCategory.SelectedItem.Text;
+                string image = "../Images/RudarelNews/" + ddImage.SelectedValue;
+                DateTime date_published = DateTime.Now;
+
+                Article article = new Article(id, title, image, text, author, date_published, category);
+                Article.AddArticle(article);
+                labelResults.Text = "Upload Succesfull!";
+                ClearTextFields();
+
+            }
+            catch (Exception)
+            {
+                labelResults.Text = "Upload failed!";
+            }
+        }
     }
 }
