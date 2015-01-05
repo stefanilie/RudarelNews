@@ -90,6 +90,7 @@
     <Compile Include="AddNewArticle.aspx.designer.cs">
       <DependentUpon>AddNewArticle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Article.cs" />
     <Compile Include="Errorpage.aspx.cs">
       <DependentUpon>Errorpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -152,6 +153,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\RudarelNews\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

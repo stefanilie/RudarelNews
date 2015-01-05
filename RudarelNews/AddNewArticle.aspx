@@ -52,5 +52,5 @@
     </table>
     <asp:Label ID="labelResults" runat="server" Text=""></asp:Label>
     <br />
-    <asp:Button ID="btnPublishArticle" runat="server" Text="Publish" />
+    <asp:Button ID="btnPublishArticle" runat="server" Text="Publish" OnClick="btnPublishArticle_Click" />
 </asp:Content>
