@@ -33,7 +33,7 @@
                 </ul>
             </div>
 
-            <div id="content_area">
+            <div id="content_area_CMS">
 
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>

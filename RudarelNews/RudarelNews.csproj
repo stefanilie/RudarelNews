@@ -66,6 +66,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Manager.aspx" />
     <Content Include="Masterpage.Master" />
+    <Content Include="MasterPageCMS.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="News_overview.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="Style.css" />
     <Content Include="Web.config" />
@@ -117,6 +119,20 @@
     </Compile>
     <Compile Include="Masterpage.Master.designer.cs">
       <DependentUpon>Masterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageCMS.Master.cs">
+      <DependentUpon>MasterPageCMS.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageCMS.Master.designer.cs">
+      <DependentUpon>MasterPageCMS.Master</DependentUpon>
+    </Compile>
+    <Compile Include="News_overview.aspx.cs">
+      <DependentUpon>News_overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News_overview.aspx.designer.cs">
+      <DependentUpon>News_overview.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Signup.aspx.cs">
