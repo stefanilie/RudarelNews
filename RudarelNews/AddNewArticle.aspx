@@ -15,6 +15,19 @@
         <tr>
             <td style="width: 79px">
 
+                Image</td>
+            <td>
+
+                <asp:DropDownList ID="ddImage" runat="server" Height="16px" Width="206px">
+                </asp:DropDownList>
+                <br />
+                <asp:FileUpload ID="FileUpload" runat="server" />
+                <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" Width="104px" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 79px">
+
                 Text</td>
             <td>
 

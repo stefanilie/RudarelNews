@@ -36,5 +36,26 @@ namespace RudarelNews
         {
 
         }
+
+        private void ClearTextFields()
+        {
+            tbArticleText.Text = "";
+            tbArticleTitle.Text = "";
+        }
+
+        protected void btnUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strFilename = System.IO.Path.GetFileName(FileUpload.FileName);
+                FileUpload.SaveAs(Server.MapPath("~/Images/RudarelNews/") + strFilename);
+                labelResults.Text = "Image " + strFilename + " succesfully uploaded!";
+                Page_Load(sender, e);
+            }
+            catch(Exception)
+            {
+                labelResults.Text = "Upload failed!";
+            }
+        }
     }
 }
