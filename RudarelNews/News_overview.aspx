@@ -10,7 +10,7 @@
         <asp:BoundField DataField="text" HeaderText="text" SortExpression="text" />
         <asp:BoundField DataField="author_name" HeaderText="author_name" SortExpression="author_name" />
         <asp:BoundField DataField="date_published" HeaderText="date_published" SortExpression="date_published" />
-        <asp:BoundField DataField="cathegory" HeaderText="cathegory" SortExpression="cathegory" />
+        <asp:BoundField DataField="category" HeaderText="category" SortExpression="category" />
     </Columns>
     <EditRowStyle BackColor="#2461BF" />
     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -23,7 +23,7 @@
     <SortedDescendingCellStyle BackColor="#E9EBEF" />
     <SortedDescendingHeaderStyle BackColor="#4870BE" />
 </asp:GridView>
-<asp:SqlDataSource ID="sds_articles" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" DeleteCommand="DELETE FROM [Article] WHERE [id] = @id" InsertCommand="INSERT INTO [Article] ([id], [title], [text], [author_name], [date_published], [cathegory]) VALUES (@id, @title, @text, @author_name, @date_published, @cathegory)" SelectCommand="SELECT * FROM [Article]" UpdateCommand="UPDATE [Article] SET [title] = @title, [text] = @text, [author_name] = @author_name, [date_published] = @date_published, [cathegory] = @cathegory WHERE [id] = @id">
+<asp:SqlDataSource ID="sds_articles" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" DeleteCommand="DELETE FROM [Article] WHERE [id] = @id" InsertCommand="INSERT INTO [Article] ([id], [title], [text], [author_name], [date_published], [category]) VALUES (@id, @title, @text, @author_name, @date_published, @category)" SelectCommand="SELECT * FROM [Article]" UpdateCommand="UPDATE [Article] SET [title] = @title, [text] = @text, [author_name] = @author_name, [date_published] = @date_published, [category] = @category WHERE [id] = @id">
     <DeleteParameters>
         <asp:Parameter Name="id" Type="Int32" />
     </DeleteParameters>
@@ -33,15 +33,18 @@
         <asp:Parameter Name="text" Type="String" />
         <asp:Parameter Name="author_name" Type="String" />
         <asp:Parameter Name="date_published" Type="DateTime" />
-        <asp:Parameter Name="cathegory" Type="String" />
+        <asp:Parameter Name="category" Type="String" />
     </InsertParameters>
     <UpdateParameters>
         <asp:Parameter Name="title" Type="String" />
         <asp:Parameter Name="text" Type="String" />
         <asp:Parameter Name="author_name" Type="String" />
         <asp:Parameter Name="date_published" Type="DateTime" />
-        <asp:Parameter Name="cathegory" Type="String" />
+        <asp:Parameter Name="category" Type="String" />
         <asp:Parameter Name="id" Type="Int32" />
     </UpdateParameters>
 </asp:SqlDataSource>
+    <br />
+    <asp:Button ID="btnDeleteArticlesFromBD" runat="server" Text="Erase DB" OnClick="btnDeleteArticlesFromBD_Click" />
+    <asp:Label ID="lblEraseBD" runat="server" Text=""></asp:Label>
 </asp:Content>
