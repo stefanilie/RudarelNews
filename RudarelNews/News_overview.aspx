@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageCMS.Master" AutoEventWireup="true" CodeBehind="News_overview.aspx.cs" Inherits="RudarelNews.News_overview" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/AddNewArticle.aspx">Add new article</asp:LinkButton>
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="sds_articles" ForeColor="#333333" GridLines="None" Height="326px" Width="724px">
     <AlternatingRowStyle BackColor="White" />
     <Columns>
