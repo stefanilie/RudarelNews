@@ -10,13 +10,36 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:SqlDataSource ID="SqlDataSourceRegistration" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" SelectCommand="SELECT * FROM [Users]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSourceRegistration" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" SelectCommand="SELECT * FROM [Users]" DeleteCommand="DELETE FROM [Users] WHERE [id] = @id" InsertCommand="INSERT INTO [Users] ([id], [first_name], [last_name], [username], [password], [email], [user_type]) VALUES (@id, @first_name, @last_name, @username, @password, @email, @user_type)" UpdateCommand="UPDATE [Users] SET [first_name] = @first_name, [last_name] = @last_name, [username] = @username, [password] = @password, [email] = @email, [user_type] = @user_type WHERE [id] = @id">
+            <DeleteParameters>
+                <asp:Parameter Name="id" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="id" Type="String" />
+                <asp:Parameter Name="first_name" Type="String" />
+                <asp:Parameter Name="last_name" Type="String" />
+                <asp:Parameter Name="username" Type="String" />
+                <asp:Parameter Name="password" Type="String" />
+                <asp:Parameter Name="email" Type="String" />
+                <asp:Parameter Name="user_type" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="first_name" Type="String" />
+                <asp:Parameter Name="last_name" Type="String" />
+                <asp:Parameter Name="username" Type="String" />
+                <asp:Parameter Name="password" Type="String" />
+                <asp:Parameter Name="email" Type="String" />
+                <asp:Parameter Name="user_type" Type="String" />
+                <asp:Parameter Name="id" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
     
     </div>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSourceRegistration" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSourceRegistration" ForeColor="#333333" GridLines="None" Width="842px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
                 <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
                 <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />

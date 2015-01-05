@@ -50,7 +50,7 @@
             </td>
         </tr>
     </table>
-    <asp:Label ID="labelResults" runat="server" Text=""></asp:Label>
+    <asp:Label ID="labelResults" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
     <br />
     <asp:Button ID="btnPublishArticle" runat="server" Text="Publish" OnClick="btnPublishArticle_Click" />
 </asp:Content>

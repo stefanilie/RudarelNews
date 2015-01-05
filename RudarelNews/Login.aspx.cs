@@ -20,7 +20,7 @@ namespace RudarelNews
             SqlConnection objConnection = new SqlConnection(
                    ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ConnectionString);
             objConnection.Open();
-            string strCheckUser = "select count(*) from Users where username='" + tbLogUsr.Text + "'";
+            string strCheckUser = "select count(*) from Users where username='" + tbLogUsr.Text.Trim() + "'";
             SqlCommand objSqlCommand = new SqlCommand(strCheckUser, objConnection);
             int nReturned = Convert.ToInt32(objSqlCommand.ExecuteScalar().ToString());
             objConnection.Close();
@@ -28,12 +28,16 @@ namespace RudarelNews
             {
                 objConnection.Open();
                 string strCheckPass = "select password from Users where username='" + tbLogUsr.Text + "'";
+                string strCheckUserType = "select user_type from Users where username='" + tbLogUsr.Text + "'";
                 SqlCommand objSqlCommandPass = new SqlCommand(strCheckPass, objConnection);
+                SqlCommand objSqlCommandUsrType = new SqlCommand(strCheckUserType, objConnection);
                 string strPassword = objSqlCommandPass.ExecuteScalar().ToString();
+                string strUserType = objSqlCommandUsrType.ExecuteScalar().ToString();
                 if(strPassword.Trim()==tbLogPass.Text.Trim())
                 {
-                    Session["New"] = tbLogUsr.Text;
-                    Response.Write("Password is correct");
+                    Session["LoginUser"] = tbLogUsr.Text;
+                    Session["UserRole"] = strUserType.Trim();
+                    Response.Redirect("User.aspx");
                 }
                 else
                 {

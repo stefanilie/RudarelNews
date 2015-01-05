@@ -70,18 +70,25 @@ namespace RudarelNews
 
                 objConnection.Open();
                 objSqlCommand.ExecuteNonQuery();
+                Session["LoginUser"] = strUsername;
+                Session["UserType"] = ddUserType.SelectedItem.ToString();
 
-                //ToDo: Chenge with login response page.
-                Response.Redirect("Manager.aspx");
-
-                //ToDo: change this with response page
-                Response.Write("Your registration is successful!");
-
+                lblSignup.Text = "Signup succesfull!";
                 objConnection.Close();
+
+                if (ddUserType.SelectedItem.ToString()=="Admin")
+                {
+                    //ToDo: Chenge with login response page.
+                    Response.Redirect("Manager.aspx");
+                }
+                else
+                {
+                    Response.Redirect("User.aspx");
+                }
             }
             catch (Exception ex)
             {
-                Response.Write("Error: " + ex.ToString());
+                lblSignup.Text = "Error: " + ex.ToString();
             }
         }
 

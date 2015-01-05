@@ -63,7 +63,7 @@ namespace RudarelNews
             try
             {
                 Guid guid = Guid.NewGuid();
-                string id = guid.ToString();
+                //string id = guid.ToString();
                 string title = tbArticleTitle.Text;
                 string author = User.Identity.Name.ToString();
                 string text = tbArticleText.Text;
@@ -71,15 +71,16 @@ namespace RudarelNews
                 string image = "../Images/RudarelNews/" + ddImage.SelectedValue;
                 DateTime date_published = DateTime.Now;
 
-                Article article = new Article(id, title, image, text, author, date_published, category);
+                //Article article = new Article(id, title, image, text, author, date_published, category);
+                Article article = new Article(title, image, text, author, date_published, category);
                 Article.AddArticle(article);
                 labelResults.Text = "Upload Succesfull!";
                 ClearTextFields();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                labelResults.Text = "Upload failed!";
+                labelResults.Text = "Upload failed!\n Error: " + ex.ToString();
             }
         }
     }

@@ -83,7 +83,9 @@
         </tr>
         <tr>
             <td style="width: 195px; text-align: right; height: 23px;"></td>
-            <td style="width: 136px; height: 23px;">&nbsp;</td>
+            <td style="width: 136px; height: 23px;">
+                <asp:Label ID="lblSignup" runat="server"></asp:Label>
+            </td>
             <td style="width: 236px; height: 23px;"></td>
         </tr>
         <tr>
