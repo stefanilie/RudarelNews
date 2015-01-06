@@ -37,11 +37,7 @@ namespace RudarelNews
                 {
                     Session["LoginUser"] = tbLogUsr.Text;
                     Session["UserRole"] = strUserType.Trim();
-                    if (strUserType.Trim() != "User")
-                        //ToDo: Chenge with login response page.
-                        Response.Redirect("News_overview.aspx");
-                    else
-                        Response.Redirect("User");
+                    Response.Redirect("User.aspx");
                 }
                 else
                 {
