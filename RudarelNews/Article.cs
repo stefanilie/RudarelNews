@@ -14,14 +14,14 @@ namespace RudarelNews
 
         public string author { get; set; }
 
-        public DateTime date_publised { get; set; }
+        public string date_publised { get; set; }
 
         public string category { get; set; }
 
         public string image { get; set; }
 
 
-        public Article(Guid id, string image, string title, string text, string author, DateTime date_published, string category)
+        public Article(Guid id, string image, string title, string text, string author, string date_published, string category)
         {
             this.id = id;
             this.title = title;
@@ -32,7 +32,7 @@ namespace RudarelNews
             this.image = image;
         }
 
-        public Article (string title, string image, string text, string author, DateTime date_published, string category)
+        public Article (string title, string image, string text, string author, string date_published, string category)
         {
             this.id = Guid.NewGuid();
             this.title = title;
@@ -52,7 +52,7 @@ namespace RudarelNews
                 article.id.ToString() + "','" +
                 article.title + "','" +
                 article.author + "','" +
-                article.date_publised.ToString("dd-MM-yyyy hh:mm:ss") + "','" +
+                article.date_publised + "','" +
                 article.category + "','" +
                 article.text + "','" +
                 article.image + "')";
@@ -65,7 +65,7 @@ namespace RudarelNews
             command.Parameters.AddWithValue("id", article.id.ToString());
             command.Parameters.AddWithValue("title", article.title);
             command.Parameters.AddWithValue("author_name", article.author);
-            command.Parameters.AddWithValue("date_published", article.date_publised.ToString("dd-MM-yyyy hh:mm:ss"));
+            command.Parameters.AddWithValue("date_published", article.date_publised);
             command.Parameters.AddWithValue("category", article.category);
             command.Parameters.AddWithValue("text", article.text);
             command.Parameters.AddWithValue("image", article.image);
@@ -99,19 +99,13 @@ namespace RudarelNews
                 {
                     Guid id = sqlReader.GetGuid(0);
                     string title = sqlReader.GetString(1);
-                    string author_name = sqlReader.GetString(2);
-                    
+                    string author_name = sqlReader.GetString(2);               
                     string date = sqlReader.GetString(3);
-                    DateTime date_published;
-                    string pattern = "dd-MM-yyyy hh:mm:ss";
-                    DateTime.TryParseExact(date, pattern,
-                        null, System.Globalization.DateTimeStyles.None, out date_published);
-
                     string category = sqlReader.GetString(4);
                     string text = sqlReader.GetString(5);
                     string image = sqlReader.GetString(6);
 
-                    Article objArticle = new Article(id, image, title, text, author_name, date_published, category);
+                    Article objArticle = new Article(id, image, title, text, author_name, date, category);
 
                     arrArticles.Add(objArticle);
                 }

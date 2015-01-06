@@ -72,7 +72,7 @@ namespace RudarelNews
                 DateTime date_published = DateTime.Now;
 
                 //Article article = new Article(id, title, image, text, author, date_published, category);
-                Article article = new Article(title, image, text, author, date_published, category);
+                Article article = new Article(title, image, text, author, date_published.ToString("dd-MM-yyyy hh:mm:ss"), category);
                 Article.AddArticle(article);
                 labelResults.Text = "Upload Succesfull!";
                 ClearTextFields();
