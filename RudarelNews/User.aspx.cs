@@ -45,7 +45,7 @@ namespace RudarelNews
 
         protected void btnUsers_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Manage.aspx");
+            Response.Redirect("Manager.aspx");
         }
 
         protected void btnArticles_Click(object sender, EventArgs e)

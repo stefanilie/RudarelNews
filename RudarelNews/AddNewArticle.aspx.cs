@@ -65,7 +65,7 @@ namespace RudarelNews
                 Guid guid = Guid.NewGuid();
                 //string id = guid.ToString();
                 string title = tbArticleTitle.Text;
-                string author = User.Identity.Name.ToString();
+                string author = Session["LoginUser"].ToString();
                 string text = tbArticleText.Text;
                 string category = ddCategory.SelectedItem.Text;
                 string image = "../Images/RudarelNews/" + ddImage.SelectedValue;

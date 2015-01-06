@@ -12,7 +12,8 @@ namespace RudarelNews
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["LoginUser"] != null)
+                Response.Redirect("User.aspx");
         }
 
         protected void btnLogIn_Click(object sender, EventArgs e)

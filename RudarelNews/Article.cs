@@ -87,7 +87,11 @@ namespace RudarelNews
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ToString();
             System.Data.SqlClient.SqlConnection conn = new System.Data.SqlClient.SqlConnection(connectionString);
             System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand("", conn);
-            string strQuery = "SELECT * FROM Article WHERE category LIKE '" + strArticleType.Trim() + "'";
+            string strQuery;
+            if (strArticleType == "*")
+                strQuery = "SELECT * FROM Article";
+            else
+                strQuery = "SELECT * FROM Article WHERE category LIKE '" + strArticleType.Trim() + "'";
 
             try
             {

@@ -23,27 +23,27 @@ namespace RudarelNews
                 sb.Append(string.Format(@"<table class='articleTable'>
                 <tr>
                     <th>Title:</th>
-                    <td>{0}</td>
+                    <td>{2}</td>
                 </tr>
 
                 <tr>
-                    <th rowspan='6' width='150px'><img runat='server' src='{1}' /></th>
+                    <th rowspan='6' width='150px'><img runat='server' src='{0}' /></th>
                     <td></td>
                 </tr>
 
                 <tr>
                     <th>Author:</th>
-                    <td>{2}</td>
-                </tr>
-
-                <tr>
-                    <th>Date published:</th>
                     <td>{3}</td>
                 </tr>
 
                 <tr>
-                    <th>Text:</th>
+                    <th>Date published:</th>
                     <td>{4}</td>
+                </tr>
+
+                <tr>
+                    <th>Text:</th>
+                    <td>{1}</td>
                 </tr>
                 
                 </table>", article.title, article.image, article.author, article.date_publised, article.text));
