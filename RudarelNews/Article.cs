@@ -7,7 +7,7 @@ namespace RudarelNews
 {
     public class Article
     {
-        public string id { get; set; }
+        public Guid id { get; set; }
         public string title { get; set; }
 
         public string text { get; set; }
@@ -23,8 +23,7 @@ namespace RudarelNews
 
         public Article(Guid id, string image, string title, string text, string author, DateTime date_published, string category)
         {
-            Guid guid = Guid.NewGuid();
-            this.id = guid.ToString();
+            this.id = id;
             this.title = title;
             this.text = text;
             this.author = author;
@@ -35,7 +34,7 @@ namespace RudarelNews
 
         public Article (string title, string image, string text, string author, DateTime date_published, string category)
         {
-            this.id = Guid.NewGuid().ToString();
+            this.id = Guid.NewGuid();
             this.title = title;
             this.text = text;
             this.author = author;
@@ -50,7 +49,7 @@ namespace RudarelNews
             System.Data.SqlClient.SqlConnection conn = new System.Data.SqlClient.SqlConnection(connectionString);
             System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand("", conn);
             string query = "INSERT INTO Article (id, title, author_name, date_published, category, text, image) values ('" +
-                article.id + "','" +
+                article.id.ToString() + "','" +
                 article.title + "','" +
                 article.author + "','" +
                 article.date_publised.ToString("dd-MM-yyyy hh:mm:ss") + "','" +
@@ -63,7 +62,7 @@ namespace RudarelNews
             command.CommandText = query;
             command.Connection = conn;
 
-            command.Parameters.AddWithValue("id", article.id);
+            command.Parameters.AddWithValue("id", article.id.ToString());
             command.Parameters.AddWithValue("title", article.title);
             command.Parameters.AddWithValue("author_name", article.author);
             command.Parameters.AddWithValue("date_published", article.date_publised.ToString("dd-MM-yyyy hh:mm:ss"));
@@ -82,7 +81,7 @@ namespace RudarelNews
             }
         }
 
-        public static void getArticlesByType(string strArticleType)
+        public static System.Collections.ArrayList getArticlesByType(string strArticleType)
         {
             System.Collections.ArrayList arrArticles = new System.Collections.ArrayList();
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ToString();
@@ -101,12 +100,20 @@ namespace RudarelNews
                     Guid id = sqlReader.GetGuid(0);
                     string title = sqlReader.GetString(1);
                     string author_name = sqlReader.GetString(2);
-                    string date_published = sqlReader.GetString(3);
+                    
+                    string date = sqlReader.GetString(3);
+                    DateTime date_published;
+                    string pattern = "dd-MM-yyyy hh:mm:ss";
+                    DateTime.TryParseExact(date, pattern,
+                        null, System.Globalization.DateTimeStyles.None, out date_published);
+
                     string category = sqlReader.GetString(4);
                     string text = sqlReader.GetString(5);
                     string image = sqlReader.GetString(6);
 
-                    Article objArticle = new Article(id,);
+                    Article objArticle = new Article(id, image, title, text, author_name, date_published, category);
+
+                    arrArticles.Add(objArticle);
                 }
             }
             finally
@@ -114,6 +121,8 @@ namespace RudarelNews
                 conn.Close();
                 command.Parameters.Clear();
             }
+
+            return arrArticles;
         }
     }
 }
