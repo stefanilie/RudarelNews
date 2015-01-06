@@ -81,6 +81,7 @@
     <Content Include="Signup.aspx" />
     <Content Include="SportNews.aspx" />
     <Content Include="Style.css" />
+    <Content Include="TechNews.aspx" />
     <Content Include="User.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="SportNews.aspx.designer.cs">
       <DependentUpon>SportNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TechNews.aspx.cs">
+      <DependentUpon>TechNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TechNews.aspx.designer.cs">
+      <DependentUpon>TechNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.aspx.cs">
       <DependentUpon>User.aspx</DependentUpon>

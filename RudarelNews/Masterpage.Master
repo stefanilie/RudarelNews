@@ -22,8 +22,8 @@
                 <ul id="nav">
                     <li><a href="Home.aspx">Home</a></li>
                     <li><a href="Signup.aspx">Sign Up</a></li>
-                    <li><a href="News_overview.aspx">Sport</a></li>
-                    <li><a href="News_overview.aspx">Tech</a></li>
+                    <li><a href="SportNews.aspx">Sport</a></li>
+                    <li><a href="TechNews.aspx">Tech</a></li>
                     <li><a href="Login.aspx">Login</a></li>
                 </ul>
             </div>

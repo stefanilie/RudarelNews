@@ -28,7 +28,7 @@
                     <li><a runat="server" href='Login.aspx' onclick="anchor_click">Log out</a></li>
                     <% } %>
                     <li><a href="SportNews.aspx">Sport</a></li>
-                    <li><a href="#">Tech</a></li>
+                    <li><a href="TechNews.aspx">Tech</a></li>
                     <li><a href="Login.aspx">Login</a></li>
                 </ul>
             </div>
