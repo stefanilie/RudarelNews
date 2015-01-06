@@ -21,7 +21,7 @@ namespace RudarelNews
         public string image { get; set; }
 
 
-        public Article(string id, string image, string title, string text, string author, DateTime date_published, string category)
+        public Article(Guid id, string image, string title, string text, string author, DateTime date_published, string category)
         {
             Guid guid = Guid.NewGuid();
             this.id = guid.ToString();
@@ -74,6 +74,40 @@ namespace RudarelNews
             {
                 conn.Open();
                 command.ExecuteNonQuery();  
+            }
+            finally
+            {
+                conn.Close();
+                command.Parameters.Clear();
+            }
+        }
+
+        public static void getArticlesByType(string strArticleType)
+        {
+            System.Collections.ArrayList arrArticles = new System.Collections.ArrayList();
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ToString();
+            System.Data.SqlClient.SqlConnection conn = new System.Data.SqlClient.SqlConnection(connectionString);
+            System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand("", conn);
+            string strQuery = "SELECT * FROM Article WHERE category LIKE '" + strArticleType.Trim() + "'";
+
+            try
+            {
+                conn.Open();
+                command.CommandText = strQuery;
+                System.Data.SqlClient.SqlDataReader sqlReader = command.ExecuteReader();
+
+                while (sqlReader.Read())
+                {
+                    Guid id = sqlReader.GetGuid(0);
+                    string title = sqlReader.GetString(1);
+                    string author_name = sqlReader.GetString(2);
+                    string date_published = sqlReader.GetString(3);
+                    string category = sqlReader.GetString(4);
+                    string text = sqlReader.GetString(5);
+                    string image = sqlReader.GetString(6);
+
+                    Article objArticle = new Article(id,);
+                }
             }
             finally
             {
