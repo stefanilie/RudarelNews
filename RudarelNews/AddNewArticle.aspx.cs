@@ -76,7 +76,7 @@ namespace RudarelNews
                 Article.AddArticle(article);
                 labelResults.Text = "Upload Succesfull!";
                 ClearTextFields();
-
+                
             }
             catch (Exception ex)
             {
