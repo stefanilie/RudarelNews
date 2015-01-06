@@ -97,15 +97,16 @@ namespace RudarelNews
 
                 while (sqlReader.Read())
                 {
-                    Guid id = sqlReader.GetGuid(0);
-                    string title = sqlReader.GetString(1);
-                    string author_name = sqlReader.GetString(2);               
-                    string date = sqlReader.GetString(3);
-                    string category = sqlReader.GetString(4);
-                    string text = sqlReader.GetString(5);
-                    string image = sqlReader.GetString(6);
+                    //Guid id = sqlReader.GetGuid(0);
+                    string title = sqlReader.GetString(0);
+                    string author_name = sqlReader.GetString(1);               
+                    string date = sqlReader.GetString(2);
+                    string category = sqlReader.GetString(3);
+                    string text = sqlReader.GetString(4);
+                    string image = sqlReader.GetString(5);
 
-                    Article objArticle = new Article(id, image, title, text, author_name, date, category);
+                    Article objArticle = new Article(title, image, text, author_name, date, category);
+                    //Article objArticle = new Article(id, image, title, text, author_name, date, category);
 
                     arrArticles.Add(objArticle);
                 }
