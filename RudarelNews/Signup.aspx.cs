@@ -118,11 +118,7 @@ namespace RudarelNews
                 objConnection.Open();
                 objSqlCommand.ExecuteNonQuery();
 
-                //ToDo: Chenge with login response page.
-                Response.Redirect("Manager.aspx");
-
-                //ToDo: change this with response page
-                Response.Write("Your registration is successful!");
+                Response.Redirect("Login.aspx");
 
                 objConnection.Close();
             }
