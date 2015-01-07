@@ -13,6 +13,33 @@ namespace RudarelNews {
     public partial class Home {
         
         /// <summary>
+        /// lblOrderBy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrderBy;
+        
+        /// <summary>
+        /// btnOrderDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOrderDate;
+        
+        /// <summary>
+        /// btnOrderTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOrderTitle;
+        
+        /// <summary>
         /// lblOutputHome control.
         /// </summary>
         /// <remarks>

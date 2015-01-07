@@ -11,9 +11,16 @@ namespace RudarelNews
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string selectedValue = ddImage.SelectedValue;
-            ShowImages();
-            ddImage.SelectedValue = selectedValue;
+            if (Session["LoginUser"] != null)
+            {
+                string selectedValue = ddImage.SelectedValue;
+                ShowImages();
+                ddImage.SelectedValue = selectedValue;
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
         private void ShowImages()
@@ -72,7 +79,7 @@ namespace RudarelNews
                 DateTime date_published = DateTime.Now;
 
                 //Article article = new Article(id, title, image, text, author, date_published, category);
-                Article article = new Article(title, image, text, author, date_published.ToString("dd-MM-yyyy hh:mm:ss"), category);
+                Article article = new Article(title, image, text, author, date_published.ToString(), category);
                 Article.AddArticle(article);
                 labelResults.Text = "Upload Succesfull!";
                 ClearTextFields();

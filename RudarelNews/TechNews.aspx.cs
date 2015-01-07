@@ -15,7 +15,7 @@ namespace RudarelNews
         }
         private void FillPage()
         {
-            System.Collections.ArrayList arrArticles = Article.getArticlesByType("Tech");
+            List<Article> arrArticles = Article.getArticlesByType("Tech");
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
             foreach(Article article in arrArticles)

@@ -24,7 +24,9 @@
     <form id="form1" runat="server">
     <div>
     
-        <textarea id="taError" name="S1"></textarea></div>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+        <asp:Label ID="lblDate" runat="server"></asp:Label>
+        </div>
     </form>
 </body>
 </html>

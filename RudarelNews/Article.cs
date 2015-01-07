@@ -62,13 +62,13 @@ namespace RudarelNews
             command.CommandText = query;
             command.Connection = conn;
 
-            command.Parameters.AddWithValue("id", article.id.ToString());
+            /*command.Parameters.AddWithValue("id", article.id.ToString());
             command.Parameters.AddWithValue("title", article.title);
             command.Parameters.AddWithValue("author_name", article.author);
             command.Parameters.AddWithValue("date_published", article.date_publised);
             command.Parameters.AddWithValue("category", article.category);
             command.Parameters.AddWithValue("text", article.text);
-            command.Parameters.AddWithValue("image", article.image);
+            command.Parameters.AddWithValue("image", article.image);*/
             try
             {
                 conn.Open();
@@ -81,9 +81,9 @@ namespace RudarelNews
             }
         }
 
-        public static System.Collections.ArrayList getArticlesByType(string strArticleType)
+        public static List<Article> getArticlesByType(string strArticleType)
         {
-            System.Collections.ArrayList arrArticles = new System.Collections.ArrayList();
+            List<Article> arrArticles = new List<Article>();
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ToString();
             System.Data.SqlClient.SqlConnection conn = new System.Data.SqlClient.SqlConnection(connectionString);
             System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand("", conn);

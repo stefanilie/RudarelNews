@@ -114,3 +114,11 @@
     text-align: center;
     border: 3px solid #E3E3E3;
 }
+
+#btnOrderTitle{
+    margin-left: 10%;
+}
+
+#btnOrderDate{
+    margin-left: 10%;
+}

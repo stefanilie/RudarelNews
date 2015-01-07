@@ -13,11 +13,14 @@ namespace RudarelNews
         {
             FillPage();
         }
+
         private void FillPage()
         {
-            System.Collections.ArrayList arrArticles = Article.getArticlesByType("*");
+            List<Article> arrArticles = Article.getArticlesByType("*");
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
-
+            List<Article> arrSortedByDate = arrArticles.OrderBy(a => a.date_publised).ToList();
+            List<Article> arrSortedByName = arrArticles.OrderBy(a => a.title).ToList();
+            
             foreach (Article article in arrArticles)
             {
                 sb.Append(string.Format(@"<table class='articleTable'>
@@ -50,6 +53,16 @@ namespace RudarelNews
             }
             lblOutputHome.Text = sb.ToString();
 
+        }
+
+        protected void btnOrderTitle_Click(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+        protected void btnOrderDate_Click(object sender, EventArgs e)
+        {
+            //todo
         }
     }
 }

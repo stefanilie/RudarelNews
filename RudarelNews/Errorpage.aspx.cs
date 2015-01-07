@@ -13,5 +13,10 @@ namespace RudarelNews
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString();
+        }
     }
 }
